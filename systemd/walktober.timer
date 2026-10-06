@@ -1,0 +1,10 @@
+[Unit]
+Description=Nightly Walktober sync at 21:00 (sync.py stops posting once logging closes)
+
+[Timer]
+# Walktober runs in October; logging stays open a few days into November.
+OnCalendar=*-10,11-* 21:00 America/Los_Angeles
+Persistent=true
+
+[Install]
+WantedBy=timers.target

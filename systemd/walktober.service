@@ -1,0 +1,12 @@
+[Unit]
+Description=Walktober sync — Strava + steps from Echo to Walktober
+After=network-online.target
+
+[Service]
+Type=oneshot
+# %h = your home directory; adjust if you cloned elsewhere
+WorkingDirectory=%h/walktober-sync
+ExecStart=/usr/bin/python3 %h/walktober-sync/sync.py
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=walktober
